@@ -1,0 +1,24 @@
+name: Track Profile Views
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Log Profile View
+      run: |
+        echo "Profile viewed by ${{ github.actor }} at ${{ github.event.issue.created_at }}" >> views.log
+    - name: Commit Log
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add views.log
+        git commit -m "Log profile view"
+        git push
