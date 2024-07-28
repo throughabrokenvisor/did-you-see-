@@ -1,1 +1,1 @@
-![Profile Views](https://github.com/throughabrokenvisor/profile-views-counter/blob/main/tracker.png)
+well done on making it to this repo. due dilligence yay!
